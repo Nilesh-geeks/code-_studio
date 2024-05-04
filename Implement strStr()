@@ -1,0 +1,19 @@
+Problem statement
+You are given two strings A and B. Find the index of the first occurrence of A in B. If A is not present in B, then return -1.
+
+For Example:
+A = “bc”, B = “abcddbc”.
+String “A” is present at index 1, and 5(0-based index), but we will return 1 as it is the first occurrence of “A” in string “B”.
+
+Time Complexity : O(N)
+Space Complexity : O(1)
+
+Code : 
+#include <bits/stdc++.h> 
+int findIndexOf(string a, string b){
+	auto it = b.find(a);
+	if(it!=string::npos){
+		return it;
+	}
+	return -1;
+}
