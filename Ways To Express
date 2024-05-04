@@ -1,0 +1,29 @@
+Problem statement:
+You are given the number ‘N’. The task is to find the number of ways to represent ‘N’ as a sum of two or more consecutive natural numbers.
+
+Example:
+N = 9
+‘9’ can be represented as:
+2 + 3 + 4 = 9
+4 + 5 = 9
+The number of ways to represent ‘9’ as a sum of consecutive natural numbers is ‘2’. So, the answer is ‘2’.
+Note:
+1. The numbers used to represent ‘N’ should be natural numbers (Integers greater than equal to 1).
+
+Time Complexity : O(n)
+Space Complexity : O(1)
+
+Code: 
+#include<cmath>
+int CountSumConsecutiveNums(int n) 
+{
+   int cnt =0 ;
+   int max_k = sqrt(2*n);
+   for(int i= 2; i<=max_k ; i++){
+       int numerator = 2* n - i*(i-1);
+       int denominator = 2*i;
+       if(numerator%denominator ==0 && numerator/denominator>0)cnt++;
+       
+   }
+    return cnt;
+}
